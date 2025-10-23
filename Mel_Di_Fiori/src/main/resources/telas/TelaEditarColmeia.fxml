@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="crud_colmeia.ColmeiaEditController"
+            prefWidth="600" prefHeight="400"
+            stylesheets="@/globalStyle/style.css">
+
+    <VBox spacing="10" alignment="TOP_LEFT" layoutX="20" layoutY="20" prefWidth="560">
+        <children>
+            <!-- Título da tela de edição -->
+            <Label text="Editar Cadastro do Animal" style="-fx-font-size: 18px; -fx-text-fill: #008cff; -fx-font-weight: bold;" />
+
+            <!-- Linha para identificação do animal -->
+            <HBox spacing="10">
+                <Label text="Nome Animal:" />
+                <TextField fx:id="txtNumero" promptText="Ex: Animal A1" />
+            </HBox>
+
+            <!-- Linha para data de cadastro -->
+            <HBox spacing="10">
+                <Label text="Data de Cadastro:" />
+                <DatePicker fx:id="dateInstalacao" />
+            </HBox>
+
+            <!-- Linha para endereço/localização -->
+            <HBox spacing="10">
+                <Label text="Endereço:" />
+                <TextField fx:id="txtLocalizacao" />
+            </HBox>
+
+            <!-- Linha para tipo de animal -->
+            <HBox spacing="10">
+                <Label text="Tipo de Animal:" />
+                <ComboBox fx:id="comboTipo" promptText="Selecione o tipo" prefWidth="200"/>
+            </HBox>
+
+            <!-- Linha para idade do animal -->
+            <HBox spacing="10">
+                <Label text="Idade animal:" />
+                <Spinner fx:id="spinnerNumeroQuadros" prefWidth="100" />
+            </HBox>
+
+            <!-- Linha para serviços/situação -->
+            <HBox spacing="10">
+                <Label text="Serviços:" />
+                <ComboBox fx:id="comboSituacao" promptText="Selecione uma opção" />
+            </HBox>
+
+            <!-- Área para observações -->
+            <VBox spacing="5">
+                <Label text="Observações:" />
+                <TextArea fx:id="txtObservacoes" prefRowCount="4" />
+            </VBox>
+
+            <!-- Botões de ação -->
+            <HBox spacing="15">
+                <Button text="Salvar" styleClass="button03" onAction="#salvarEdicao" />
+                <Button text="Cancelar" styleClass="button03" onAction="#cancelarEdicao" />
+            </HBox>
+        </children>
+
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10" />
+        </padding>
+    </VBox>
+</AnchorPane>

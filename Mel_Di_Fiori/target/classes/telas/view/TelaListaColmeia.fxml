@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<!-- ===================================== -->
+<!-- Container principal da tela -->
+<!-- AnchorPane permite posicionamento absoluto, mas usaremos VBox para layout vertical -->
+<AnchorPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="crud_colmeia.ColmeiaListController"
+            prefWidth="800"
+            prefHeight="500"
+            stylesheets="@/globalStyle/style.css"> <!-- Link para seu CSS -->
+
+    <!-- VBox: organiza elementos em coluna -->
+    <VBox spacing="10">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+
+        <children>
+            <!-- ===================================== -->
+            <!-- Título da tela -->
+            <Label text="Tela de Cadastro"
+                   styleClass="titulo-principal"/>
+
+            <!-- ===================================== -->
+            <!-- Tabela de colmeias -->
+            <TableView fx:id="tableColmeias" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colIdentificacao" text="Nome" prefWidth="120"/>
+                    <TableColumn fx:id="colLocalizacao" text="Endereço" prefWidth="120"/>
+                    <TableColumn fx:id="colTipo" text="Espécie" prefWidth="100"/>
+                    <TableColumn fx:id="colStatus" text="Serviços" prefWidth="100"/>
+                    <TableColumn fx:id="colData" text="Data Cadastro" prefWidth="150"/>
+                    <TableColumn fx:id="colQuadros" text="Idade" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <!-- ===================================== -->
+            <!-- Botões -->
+            <HBox spacing="10">
+                <Button text="Cadastrar" onAction="#abrirCadastro" styleClass="button02"/>
+                <Button text="Editar" onAction="#editarColmeia" styleClass="button02"/>
+                <Button text="Excluir" onAction="#excluirColmeia" styleClass="button02"/>
+            </HBox>
+        </children>
+    </VBox>
+</AnchorPane>

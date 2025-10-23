@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="20" alignment="TOP_CENTER"
+      style="-fx-background-color: white; -fx-padding: 30;">
+    
+    <Label text="Menu Veterinária"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <HBox spacing="30">
+        <VBox spacing="10" style="-fx-background-color: #008cff; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <Label text="Veterinários:" style="-fx-font-size: 20px; -fx-text-fill: white;" />
+            <Label text="10" style="-fx-font-size: 24px; -fx-text-fill: white;" />
+        </VBox>
+
+        <VBox spacing="10" style="-fx-background-color: #008cff; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <Label text="Consultas:" style="-fx-font-size: 20px; -fx-text-fill: white;" />
+            <Label text="200" style="-fx-font-size: 24px; -fx-text-fill: white;" />
+        </VBox>
+    </HBox>
+
+</VBox>

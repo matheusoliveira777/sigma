@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Declaração padrão de arquivo XML -->
+
+<!-- Importações dos componentes JavaFX usados no layout -->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<!--
+    💡 CadastroColmeia.fxml
+
+    Tela para cadastro de colmeias no sistema "Mel Di Fiori".
+    Utiliza AnchorPane como container principal.
+    Organiza os campos de entrada em VBox e HBox para layout limpo.
+    Controlada pela classe ColmeiaController.java.
+-->
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="crud_colmeia.ColmeiaCreateController"
+            prefWidth="600" prefHeight="400">
+    <!--
+        AnchorPane é um painel que permite posicionar filhos com coordenadas.
+        Definimos largura e altura preferidas da janela.
+        O controller gerencia os eventos e interações desta tela.
+    -->
+
+    <!-- Caixa vertical principal que contém todos os elementos -->
+    <VBox spacing="10" alignment="TOP_LEFT" layoutX="20" layoutY="20" prefWidth="560">
+        <!-- Espaçamento de 10 entre elementos, alinhamento no topo à esquerda -->
+        <!-- Posicionamento do VBox dentro do AnchorPane (margem de 20 px da esquerda e topo) -->
+
+        <children>
+
+            <!-- Título da tela -->
+            <Label text="Cadastro" style="-fx-font-size: 18px; -fx-text-fill: #008cff;-fx-font-weight: bold;" />
+            <!-- Fonte maior e negrito para destaque -->
+
+            <!-- Linha horizontal com label e campo texto para "Identificação" -->
+            <HBox spacing="10">
+                <Label text="Nome Animal:" />
+                <TextField fx:id="txtNumero" promptText="Ex: Animal A1" />
+                <!-- Campo texto com dica (promptText) e id para acesso no controller -->
+            </HBox>
+
+            <!-- Linha para Data de Instalação com DatePicker -->
+            <HBox spacing="10">
+                <Label text="Data de Cadastro:" />
+                <DatePicker fx:id="dateInstalacao" />
+                <!-- Componente para seleção de data -->
+            </HBox>
+
+            <!-- Linha para Localização com campo texto -->
+            <HBox spacing="10">
+                <Label text="Endereço:" />
+                <TextField fx:id="txtLocalizacao" />
+            </HBox>
+
+            <!-- Linha para Tipo da Caixa com ComboBox -->
+            <HBox spacing="10">
+                <Label text="Tipo de Animal:" />
+                <ComboBox fx:id="comboTipo" promptText="Selecione o tipo" prefWidth="200"/>
+                <!-- ComboBox com dica e largura definida -->
+            </HBox>
+
+            <!-- Linha para Número de Quadros com Spinner -->
+            <HBox spacing="10">
+                <Label text="Idade animal:" />
+                <Spinner fx:id="spinnerNumeroQuadros" prefWidth="100" />
+                <!-- Spinner para selecionar número com largura fixa -->
+            </HBox>
+
+            <!-- Linha para Situação com ComboBox -->
+            <HBox spacing="10">
+                <Label text="Serviços:" />
+                <ComboBox fx:id="comboSituacao" promptText="Selecione uma opção" />
+            </HBox>
+
+            <!-- Área para observações com label e TextArea -->
+            <VBox spacing="5">
+                <Label text="Observações:" />
+                <TextArea fx:id="txtObservacoes" prefRowCount="4" />
+                <!-- Área de texto maior para anotações -->
+            </VBox>
+
+            <!-- Linha com botões Salvar e Limpar -->
+            <HBox spacing="15">
+                <Button text="Salvar" styleClass="button03" onAction="#salvarColmeia" />
+                <!-- Chama método salvarColmeia no controller -->
+                <Button text="Limpar" styleClass="button03" onAction="#limparCampos" />
+                <!-- Chama método limparCampos para limpar campos -->
+            </HBox>
+
+        </children>
+
+        <!-- Define as margens internas do VBox -->
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10" />
+        </padding>
+
+    </VBox>
+</AnchorPane>
